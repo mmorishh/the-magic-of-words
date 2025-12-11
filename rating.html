@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица рейтинга - Магия слов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="rating-page">
+        <div class="rating-header">
+            <h1></h1>Таблица рейтинга</h1>
+            <button onclick="goToMenu()" class="back-btn">
+                ← Назад в меню
+            </button>
+        </div>
+
+        <!-- Статистика -->
+        <div class="rating-stats">
+            <div class="stat-item">
+                <div class="stat-label">Всего игроков</div>
+                <div class="stat-value" id="totalPlayers">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Лучший результат</div>
+                <div class="stat-value" id="topScore">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Средний результат</div>
+                <div class="stat-value" id="avgScore">0</div>
+            </div>
+        </div>
+
+        <!-- Информация о текущем пользователе -->
+        <div id="currentUserInfo" class="current-user-info" style="display: none;">
+            <div class="user-rank">Ваше место: <span id="userPosition">-</span></div>
+            <div class="user-name"><span id="currentUserName">-</span></div>
+            <div class="user-score"><span id="currentUserScore">0</span> очков</div>
+        </div>
+
+        <!-- Таблица рейтинга -->
+        <div class="rating-table-container">
+            <div id="ratingTableContainer">
+                <!-- Таблица будет загружена здесь -->
+            </div>
+        </div>
+
+        <!-- Легенда -->
+        <div class="table-legend">
+            <div class="legend-item">
+                <div class="legend-color legend-current"></div>
+                <span>Текущий игрок</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-top1"></div>
+                <span>1 место</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-top2"></div>
+                <span>2 место</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-top3"></div>
+                <span>3 место</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="rating.js"></script>
+</body>
+</html>
