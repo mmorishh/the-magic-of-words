@@ -1,12 +1,9 @@
-/* game.css - ТОЛЬКО стили для игры */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ФОН для игры (отдельный от главной) */
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #1a2980, #26d0ce);
@@ -181,17 +178,17 @@ body {
 /* Контейнер для картинок */
 .answers-container {
     display: grid;
-    gap: 30px; /* Увеличил отступы между картинками */
+    gap: 30px;
     margin-bottom: 20px;
-    padding: 20px; /* Увеличил внутренние отступы */
+    padding: 20px;
     justify-items: center;
     align-items: center;
 }
 
 /* Картинки-ответы */
 .answer-image {
-    max-width: 180px; /* Ограничил максимальную ширину */
-    max-height: 180px; /* Ограничил максимальную высоту */
+    max-width: 180px; 
+    max-height: 180px; 
     width: auto;
     height: auto;
     object-fit: contain;
@@ -266,7 +263,7 @@ body {
 
 
 
-/* ===== УРОВЕНЬ 2 - СТИЛИ (УМЕНЬШЕННЫЕ) ===== */
+/* ===== УРОВЕНЬ 2 ===== */
 
 /* Область для ответов */
 .answers-area {
@@ -465,7 +462,7 @@ body {
 
 
 
-/* ===== УРОВЕНЬ 3 - СТИЛИ (БЫСТРАЯ РЕАКЦИЯ) ===== */
+/* ===== УРОВЕНЬ 3  ===== */
 
 /* Игровая зона */
 .game-area-level3 {
@@ -488,7 +485,7 @@ body {
     height: 4px;
     background: linear-gradient(90deg, transparent, #ff4081, transparent);
     z-index: 10;
-    top: 65%; /* Подняли линию выше */
+    top: 65%; 
     box-shadow: 0 0 15px rgba(255, 64, 129, 0.7);
 }
 
@@ -508,7 +505,7 @@ body {
 .word-tracks {
     display: flex;
     justify-content: space-around;
-    height: 250px; /* Уменьшили высоту */
+    height: 250px; 
     margin-bottom: 20px;
 }
 
@@ -518,7 +515,7 @@ body {
     border-left: 1px dashed rgba(255, 255, 255, 0.2);
     border-right: 1px dashed rgba(255, 255, 255, 0.2);
     position: relative;
-    min-width: 80px; /* Увеличили ширину */
+    min-width: 80px; 
 }
 
 .word-track::before {
@@ -629,7 +626,7 @@ body {
     background: linear-gradient(135deg, #333, #555);
     border: 2px solid #9c27b0;
     border-radius: 10px;
-    display: none; /* По умолчанию скрыты */
+    display: none;
     align-items: center;
     justify-content: center;
     color: white;
@@ -693,4 +690,268 @@ body {
     font-size: 18px;
     border: 2px solid #9c27b0;
     min-width: 40px;
+}
+
+
+
+
+/* ===== СЖАТИЕ ПО ВЫСОТЕ ДЛЯ НОУТБУКОВ (1400px и ниже) ===== */
+@media screen and (max-height: 900px) and (min-width: 1200px) {
+    body {
+        padding: 15px;
+    }
+    
+    /* Общие элементы */
+    #gameContainer {
+        padding: 15px;
+    }
+    
+    .game-header {
+        padding: 12px 15px;
+        margin-bottom: 15px;
+    }
+    
+    .round-info, .score-info {
+        font-size: 16px;
+    }
+    
+    .btn-small {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    
+    /* Загадка */
+    .riddle-container {
+        padding: 15px;
+        margin-bottom: 15px;
+        min-height: 70px;
+    }
+    
+    #riddleText {
+        font-size: 18px;
+        min-height: 50px;
+    }
+    
+    /* Таймер */
+    .timer-container {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .timer-bar {
+        height: 20px;
+        margin-bottom: 8px;
+    }
+    
+    .timer-text {
+        font-size: 24px;
+    }
+    
+    /* Картинки-ответы - Уровень 1 */
+    .answers-container {
+        gap: 15px;
+        margin-bottom: 15px;
+        padding: 15px;
+        min-height: auto;
+    }
+    
+    .answer-image {
+        max-width: 160px;
+        max-height: 160px;
+    }
+    
+    /* Уровень 2 - сжатие */
+    .answers-area,
+    .words-area {
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+    
+    .drop-zone {
+        min-height: 80px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .word-blocks {
+        min-height: 120px;
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .word-block {
+        padding: 8px 12px;
+        font-size: 14px;
+        min-height: 40px;
+        max-height: 40px;
+        border-radius: 18px;
+    }
+    
+    .dropped-word {
+        padding: 6px 12px;
+        font-size: 13px;
+        min-height: 36px;
+        border-radius: 18px;
+    }
+    
+    .counter {
+        padding: 8px;
+        font-size: 15px;
+        margin-top: 6px;
+    }
+    
+    /* Уровень 3 - сжатие */
+    .game-area-level3 {
+        padding: 15px;
+        min-height: 280px;
+        margin-bottom: 12px;
+    }
+    
+    .word-tracks {
+        height: 180px;
+        margin-bottom: 15px;
+    }
+    
+    .hit-line {
+        top: 60%;
+    }
+    
+    .hit-line::before {
+        font-size: 12px;
+        top: -20px;
+    }
+    
+    .key-indicator {
+        bottom: -35px;
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    .falling-word {
+        padding: 8px 15px;
+        font-size: 14px;
+        min-width: 80px;
+        border-radius: 18px;
+    }
+    
+    .virtual-keyboard {
+        padding: 12px;
+        margin-top: 15px;
+    }
+    
+    .key {
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+    }
+    
+    .hit-counter {
+        top: 15px;
+        right: 15px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .hit-counter span {
+        font-size: 16px;
+    }
+    
+    /* Статус игры */
+    .game-status {
+        padding: 10px;
+        font-size: 15px;
+        min-height: 25px;
+        margin-top: 8px;
+    }
+    
+    /* Модальные окна */
+    .modal-content {
+        padding: 25px;
+        max-width: 450px;
+    }
+    
+    .modal-content h2 {
+        margin-bottom: 15px;
+        font-size: 22px;
+    }
+    
+    .modal-content p {
+        margin: 8px 0;
+        line-height: 1.4;
+    }
+}
+
+/* Для очень маленькой высоты */
+@media screen and (max-height: 800px) and (min-width: 1200px) {
+    .game-header {
+        padding: 10px 12px;
+        margin-bottom: 12px;
+    }
+    
+    .riddle-container {
+        padding: 12px;
+        margin-bottom: 12px;
+        min-height: 60px;
+    }
+    
+    #riddleText {
+        font-size: 16px;
+        min-height: 45px;
+    }
+    
+    .timer-container {
+        padding: 10px;
+        margin-bottom: 12px;
+    }
+    
+    .timer-bar {
+        height: 18px;
+    }
+    
+    .timer-text {
+        font-size: 22px;
+    }
+    
+    .answers-container {
+        gap: 12px;
+        margin-bottom: 12px;
+        padding: 12px;
+    }
+    
+    .answer-image {
+        max-width: 150px;
+        max-height: 150px;
+    }
+    
+    /* Уровень 2 */
+    .drop-zone {
+        min-height: 70px;
+    }
+    
+    .word-blocks {
+        min-height: 110px;
+    }
+    
+    .word-block {
+        padding: 7px 10px;
+        font-size: 13px;
+        min-height: 35px;
+        max-height: 35px;
+    }
+    
+    /* Уровень 3 */
+    .game-area-level3 {
+        min-height: 250px;
+        padding: 12px;
+    }
+    
+    .word-tracks {
+        height: 160px;
+    }
+    
+    .key {
+        width: 50px;
+        height: 50px;
+    }
 }
